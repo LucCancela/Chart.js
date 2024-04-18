@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o Chart.Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body style="display: flex; justify-content: space-between;">
+
+    <!-- Espaço em que será renderizado o gráfico -->
+    <div>
+        <canvas id="myChart"  style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2"  style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart3"  style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+      
+    
+</body>
+
+<!-- Dados do gráfico -->
+<script>
+// Os vetores são tipos que permitem o armazenamento 
+// de uma coleção de valores do mesmo tipo
+
+    // parametros
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    
+    // dados
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      },
+      {
+        label: 'My Second dataset',
+        backgroundColor: 'rgb(0, 0, 255)',
+        borderColor: 'rgb(0, 0, 255)',
+        data: [0+10, 10+10, 5+10, 2+10, 20+10, 30+10, 45+10],
+      },
+      
+    ]
+    };
+        
+    // tipo/configuração
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+
+    const config2 = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+
+  </script>
+
+  <!-- renderização do gráfico -->
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    const myChart2 = new Chart(
+      document.getElementById('myChart2'),
+      config2
+    );
+
+  </script>
+  
+  
+
+</html>
+
+
